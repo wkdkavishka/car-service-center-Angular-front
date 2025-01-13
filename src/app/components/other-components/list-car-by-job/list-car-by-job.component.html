@@ -1,0 +1,224 @@
+<div class="flex items-center justify-center">
+  <!-- title -->
+  <small
+    class="my-2 ms-2 text-center text-4xl font-semibold text-gray-500 dark:text-gray-400"
+  >
+    Find Cars
+  </small>
+</div>
+
+<section>
+  <div class="flex flex-wrap justify-evenly">
+    <div class="dropDown">
+      <!--    drop down button progress   -->
+      <button
+        #dropdown
+        (click)="toggleDropdownProgress()"
+        class="dropDown-button"
+        type="button"
+      >
+        Stage {{ job_progress === -1 ? "None" : job_progress }}
+        <svg
+          aria-hidden="true"
+          class="ms-3 h-2.5 w-2.5"
+          fill="none"
+          viewBox="0 0 10 6"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m1 1 4 4 4-4"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </button>
+      <!--    drop down button  end  -->
+      <!-- Dropdown menu Progress -->
+      <div *ngIf="isProgressDropdownOpen">
+        <ul class="dropDown-menu">
+          <li>
+            <button
+              (click)="setJobProgress(-1)"
+              class="block rounded px-4 py-2 text-sm hover:bg-white/30 hover:backdrop-blur-xl dark:hover:bg-black/30"
+            >
+              None
+            </button>
+          </li>
+          <li>
+            <button
+              (click)="setJobProgress(1)"
+              class="dropDown-menu-item dark:hover:bg-black/30"
+            >
+              1
+            </button>
+          </li>
+          <li>
+            <button
+              (click)="setJobProgress(2)"
+              class="dropDown-menu-item dark:hover:bg-black/30"
+            >
+              2
+            </button>
+          </li>
+          <li>
+            <button
+              (click)="setJobProgress(3)"
+              class="dropDown-menu-item dark:hover:bg-black/30"
+            >
+              3
+            </button>
+          </li>
+          <li>
+            <button
+              (click)="setJobProgress(4)"
+              class="dropDown-menu-item dark:hover:bg-black/30"
+            >
+              4
+            </button>
+          </li>
+          <li>
+            <button
+              (click)="setJobProgress(5)"
+              class="dropDown-menu-item dark:hover:bg-black/30"
+            >
+              5
+            </button>
+          </li>
+        </ul>
+      </div>
+      <!-- drop down menu progress end -->
+    </div>
+    <div class="dropDown">
+      <!--    drop down button  status  -->
+      <button
+        (click)="toggleDropdownStatus()"
+        class="dropDown-button"
+        type="button"
+      >
+        Status
+        {{ job_status === null ? "None" : job_status ? "Open" : "Close" }}
+        <svg
+          aria-hidden="true"
+          class="ms-3 h-2.5 w-2.5"
+          fill="none"
+          viewBox="0 0 10 6"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m1 1 4 4 4-4"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </button>
+      <!-- Dropdown menu Status -->
+      <div *ngIf="isStatusDropdownOpen">
+        <ul class="dropDown-menu">
+          <li>
+            <button
+              (click)="setJobStatus(null)"
+              class="dropDown-menu-item dark:hover:bg-black/30"
+            >
+              None
+            </button>
+          </li>
+          <li>
+            <button
+              (click)="setJobStatus(true)"
+              class="dropDown-menu-item dark:hover:bg-black/30"
+            >
+              Open
+            </button>
+          </li>
+          <li>
+            <button
+              (click)="setJobStatus(false)"
+              class="dropDown-menu-item dark:hover:bg-black/30"
+            >
+              Close
+            </button>
+          </li>
+        </ul>
+      </div>
+      <!-- drop down status end -->
+    </div>
+    <!--    drop down button  end  -->
+    <!-- filter by id -->
+    <div class="group relative z-0 mb-1 inline-flex">
+      <input
+        #numberPlate
+        [(ngModel)]="car_numberplate"
+        class="peer block appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 pb-2.5 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+        id="numberPlate"
+        name="numberPlate"
+        placeholder=""
+        type="text"
+      />
+      <label
+        class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-blue-600 dark:text-gray-400 peer-focus:dark:text-blue-500 rtl:peer-focus:translate-x-1/4"
+        for="numberPlate"
+      >
+        Number Plate
+      </label>
+    </div>
+    <!-- filter by id end -->
+    <!-- update button-->
+    <button
+      (click)="onFind()"
+      [ngStyle]="{ cursor: 'pointer' }"
+      class="find"
+      type="button"
+    >
+      Find
+    </button>
+    <!-- end update button-->
+  </div>
+</section>
+
+<!-- table - all cars -->
+<table
+  class="relative w-full text-left text-sm text-gray-500 dark:text-gray-400 rtl:text-right"
+>
+  <thead
+    class="bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400"
+  >
+    <tr>
+      <th class="px-1 py-2" scope="col">
+        <button
+          (click)="refresh()"
+          [ngStyle]="{ cursor: 'pointer', 'user-select': 'none' }"
+          class="inline-flex rounded px-2 py-1 text-sm leading-none text-green-500 hover:border-transparent hover:bg-green-600 hover:text-slate-100"
+        >
+          #
+        </button>
+      </th>
+      <th class="px-6 py-3" scope="col">N-Plate</th>
+      <th class="px-6 py-3" scope="col">Status</th>
+      <th class="px-6 py-3" scope="col">Progress</th>
+      <!--    <th class="px-2 py-3" scope="col">Del</th>-->
+    </tr>
+  </thead>
+  <tbody *ngIf="found_cars.length > 0">
+    <tr
+      (click)="selectReturnCar(car)"
+      *ngFor="let car of found_cars; let i = index"
+      [ngStyle]="{ cursor: 'pointer', 'user-select': 'none' }"
+      class="border-b bg-white dark:border-gray-700 dark:bg-gray-800"
+    >
+      <td class="px-2 py-1">{{ i + 1 }}</td>
+      <td class="px-2 py-1">{{ car?.car_numberplate }}</td>
+      <td class="px-2 py-1">{{ car?.job_status }}</td>
+      <td class="px-2 py-1">At Stage: {{ car?.job_progress }}</td>
+      <!--    <td-->
+      <!--      class="px-2 py-1 text-sm leading-none rounded text-red-500 hover:text-slate-100 hover:border-transparent hover:bg-red-600 my-1 inline-flex"-->
+      <!--      (click)="onDelete(car); $event.stopPropagation();"-->
+      <!--      [ngStyle]="{ 'cursor': 'pointer' }">-->
+      <!--      x-->
+      <!--    </td>-->
+    </tr>
+  </tbody>
+</table>

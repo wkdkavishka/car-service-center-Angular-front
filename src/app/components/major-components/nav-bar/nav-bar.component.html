@@ -1,0 +1,93 @@
+<div class="bg-teal-900/90 backdrop-blur-sm dark:bg-teal-900/70">
+  <div class="container mx-auto px-0 md:px-4">
+    <nav class="grid items-center px-2 py-1">
+      <!-- navigation menu panel -->
+      <div class="flex justify-between">
+        <div
+          class="flex-auto flex-wrap items-center justify-between px-4 md:flex md:w-auto"
+          id="menu-1"
+        >
+          <div class="block text-sm md:flex">
+            <a
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="mr-2 block rounded px-2 py-2 text-teal-200 hover:bg-white/30 hover:text-white hover:backdrop-blur-xl dark:hover:bg-black/30 md:mt-0 md:inline-block"
+              routerLink=""
+              routerLinkActive="bg-white/30 dark:bg-black/30 backdrop-blur-xl"
+              >Home
+            </a>
+            <a
+              class="mr-2 block rounded px-2 py-2 text-teal-200 hover:bg-white/30 hover:text-white hover:backdrop-blur-xl dark:hover:bg-black/30 md:mt-0 md:inline-block"
+              routerLink="dashboard"
+              routerLinkActive="bg-white/30 dark:bg-black/30 backdrop-blur-xl"
+              >Dashboard
+            </a>
+          </div>
+        </div>
+        <!-- menu-1 end -->
+        <!-- menu-2 -->
+        <div
+          class="flex-auto flex-wrap justify-end px-4 md:flex md:w-auto md:items-center"
+          id="menu-2"
+        >
+          <a
+            class="mr-2 block rounded px-2 py-2 text-right text-teal-200 hover:bg-white/30 hover:text-white hover:backdrop-blur-xl dark:hover:bg-black/30 md:mt-0 md:inline-block"
+            routerLink="about"
+            routerLinkActive="bg-white/30 dark:bg-black/30 backdrop-blur-xl"
+            >About
+          </a>
+        </div>
+        <!--    menu-2 end    -->
+
+        <!--    new dark drop down    -->
+        <section>
+          <div class="relative inline-block text-right">
+            <button
+              (click)="darkToggle()"
+              aria-expanded="true"
+              aria-haspopup="true"
+              class="my-1 inline-flex rounded border px-3 py-2 text-sm leading-none text-white hover:border-transparent hover:bg-white hover:text-teal-500"
+              id="menu-button"
+              type="button"
+            >
+              <div class="hidden sm:block">Colour</div>
+              <svg
+                aria-hidden="true"
+                class="h-4 w-4 text-gray-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </button>
+            <div
+              [ngClass]="{ block: darkMenuIsOpen, hidden: !darkMenuIsOpen }"
+              class="absolute right-0 z-10 mt-2 w-24 origin-top-right rounded bg-teal-900/90 text-center text-white shadow-lg ring-1 ring-black ring-opacity-5 backdrop-blur-xl focus:outline-none"
+            >
+              <div role="none">
+                <button
+                  (click)="DarkMode(false)"
+                  class="block rounded px-4 py-2 text-sm hover:bg-white/30 hover:backdrop-blur-xl dark:hover:bg-black/30"
+                >
+                  Light
+                </button>
+                <button
+                  (click)="DarkMode(true)"
+                  class="block rounded px-4 py-2 text-sm hover:bg-white/30 hover:backdrop-blur-xl dark:hover:bg-black/30"
+                >
+                  Dark
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- end -->
+      </div>
+      <!--    nav bar end    -->
+    </nav>
+  </div>
+</div>

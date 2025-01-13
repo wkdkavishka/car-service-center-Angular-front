@@ -1,0 +1,44 @@
+@import "../../../../styles";
+
+.submit {
+  @include button($blue-500);
+}
+
+.input-group {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  margin-bottom: 1.25rem;
+
+  input {
+    display: block;
+    padding: 0.625rem 0;
+    width: 100%;
+    font-size: 0.875rem;
+    color: #1f2937;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #d1d5db;
+    appearance: none;
+    outline: none;
+
+    &:focus {
+      border-color: #3b82f6;
+    }
+
+    //&.dark-mode {
+    //  color: #f9fafb;
+    //  border-color: #4b5563;
+    //}
+
+  }
+
+  label {
+    position: absolute;
+    font-size: 0.875rem;
+    color: #6b7280;
+    top: 0.75rem;
+    transform-origin: 0 0;
+    transition: all 0.3s ease;
+  }
+}

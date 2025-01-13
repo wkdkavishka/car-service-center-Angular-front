@@ -1,0 +1,89 @@
+/* You can add global styles to this file, and also import other style files */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "styles/colours";
+
+// #####################################
+
+@mixin button($colour: $slate-100) {
+  position: relative;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+  line-height: 1;
+  border: 1px solid currentColor;
+  border-radius: 0.25rem;
+  color: var(--colour, $colour);
+  display: inline-flex;
+  margin: 0.25rem 0;
+
+  &:hover {
+    border-color: transparent;
+    color: $slate-100;
+    background-color: var(--colour, $colour);
+    cursor: pointer;
+  }
+}
+
+@mixin dropDown($colour: $blue-500) {
+  position: relative;
+
+  .dropDown-button {
+    @include button($colour);
+  }
+
+  .dropDown-menu {
+    color: #ffffff;
+    position: absolute;
+    z-index: 10;
+    margin-top: 0.5rem;
+    width: 6rem;
+    border-radius: 0.25rem;
+    backdrop-filter: blur(20px);
+    background-color: $colour;
+    text-align: center;
+  }
+
+  .dropDown-menu-item {
+    display: block;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(5px);
+      //@media (prefers-color-scheme: dark) {
+      //  background-color: rgba(0, 0, 0, 0.3);
+      //}
+    }
+  }
+}
+
+@mixin title($colour: $gray-400, $dark-colour: $green-500) {
+  margin-inline-start: 0.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: $colour;
+  text-align: center;
+}
+
+@mixin full-width-text($dark-color: $gray-400, $light-color: $gray-500) {
+  width: 100%;
+  font-size: 0.875rem;
+  text-align: left;
+
+  [dir="rtl"] & {
+    text-align: right;
+  }
+
+  color: $light-color;
+
+  @media (prefers-color-scheme: dark) {
+    color: $dark-color;
+  }
+}

@@ -1,0 +1,48 @@
+<div class="flex items-center justify-center">
+  <!-- title -->
+  <small class="title dark"> All Cars </small>
+</div>
+
+<!-- table - all cars -->
+<table
+  class="w-full text-left text-sm text-gray-500 dark:text-gray-400 rtl:text-right"
+>
+  <thead
+    class="bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400"
+  >
+    <tr>
+      <th class="px-1 py-2" scope="col">
+        <button
+          (click)="refresh()"
+          [ngStyle]="{ cursor: 'pointer', 'user-select': 'none' }"
+          class="inline-flex rounded px-2 py-1 text-sm leading-none text-green-500 hover:border-transparent hover:bg-green-600 hover:text-slate-100"
+        >
+          #
+        </button>
+      </th>
+      <th class="px-6 py-3" scope="col">Owner</th>
+      <th class="px-6 py-3" scope="col">Model</th>
+      <th class="px-6 py-3" scope="col">N-Plate</th>
+      <!--    <th class="px-2 py-3" scope="col">Del</th>-->
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      (click)="selectCar(car)"
+      *ngFor="let car of cars; let i = index"
+      [ngStyle]="{ cursor: 'pointer', 'user-select': 'none' }"
+      class="border-b bg-white dark:border-gray-700 dark:bg-gray-800"
+    >
+      <td class="px-2 py-1">{{ i + 1 }}</td>
+      <td class="px-2 py-1">{{ car.owner }}</td>
+      <td class="px-2 py-1">{{ car.car_model }}</td>
+      <td class="px-2 py-1">{{ car.car_numberplate }}</td>
+      <!--    <td-->
+      <!--      class="px-2 py-1 text-sm leading-none rounded text-red-500 hover:text-slate-100 hover:border-transparent hover:bg-red-600 my-1 inline-flex"-->
+      <!--      (click)="onDelete(car); $event.stopPropagation();"-->
+      <!--      [ngStyle]="{ 'cursor': 'pointer' }">-->
+      <!--      x-->
+      <!--    </td>-->
+    </tr>
+  </tbody>
+</table>
