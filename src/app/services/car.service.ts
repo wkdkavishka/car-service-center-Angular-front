@@ -14,7 +14,7 @@ export class CarService {
     this.initialize().then(() => console.log('Car service initialized'));
   }
 
-  // todo -> implement -> fetch cars with limit of n
+  // todo -> implement -> fetch cars with limit of n  ( pagination )
 
   // Refresh cars and wait until the data is fetched
   async refreshCarList(): Promise<Car[]> {
