@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "start-production": "ng build && ./node_modules/.bin/http-server -p 4200 dist/car-service-center-angular/browser"
+    "start-production": "ng build && ./node_modules/.bin/http-server  -p 4200   dist/car-service-center-angular/browser"
   },
   "private": true,
   "dependencies": {
