@@ -1,0 +1,77 @@
+
+> car-service-center-angular@0.0.0 start-production
+> ng build && ./node_modules/.bin/http-server  -p 4200   dist/car-service-center-angular/browser
+
+❯ Building...
+✔ Building...
+Initial chunk files   | Names         |  Raw size | Estimated transfer size
+main-YAV2PMMT.js      | main          | 388.94 kB |                80.96 kB
+polyfills-FFHMD2TL.js | polyfills     |  34.52 kB |                11.28 kB
+styles-DOYOKQ27.css   | styles        |  19.38 kB |                 3.31 kB
+
+                      | Initial total | 442.83 kB |                95.55 kB
+
+Application bundle generation complete. [6.191 seconds]
+
+Output location: /mnt/Storage-ssd/projects/Samples/car-service-center-Angular-Express-Mongo/car-service-center-Angular-front/dist/car-service-center-angular
+
+Starting up http-server, serving dist/car-service-center-angular/browser
+
+http-server version: 14.1.1
+
+http-server settings: 
+CORS: disabled
+Cache: 3600 seconds
+Connection Timeout: 120 seconds
+Directory Listings: visible
+AutoIndex: visible
+Serve GZIP Files: false
+Serve Brotli Files: false
+Default File Extension: none
+
+Available on:
+  http://127.0.0.1:4200
+  http://10.26.174.202:4200
+Hit CTRL-C to stop the server
+
+http-server stopped.
+
+> car-service-center-angular@0.0.0 start-production
+> ng build && ./node_modules/.bin/http-server  -p 4200   dist/car-service-center-angular/browser
+
+❯ Building...
+✔ Building...
+Initial chunk files   | Names         |  Raw size | Estimated transfer size
+main-YAV2PMMT.js      | main          | 388.94 kB |                80.96 kB
+polyfills-FFHMD2TL.js | polyfills     |  34.52 kB |                11.28 kB
+styles-DOYOKQ27.css   | styles        |  19.38 kB |                 3.31 kB
+
+                      | Initial total | 442.83 kB |                95.55 kB
+
+Application bundle generation complete. [5.453 seconds]
+
+Output location: /mnt/Storage-ssd/projects/Samples/car-service-center-Angular-Express-Mongo/car-service-center-Angular-front/dist/car-service-center-angular
+
+Starting up http-server, serving dist/car-service-center-angular/browser
+
+http-server version: 14.1.1
+
+http-server settings: 
+CORS: disabled
+Cache: 3600 seconds
+Connection Timeout: 120 seconds
+Directory Listings: visible
+AutoIndex: visible
+Serve GZIP Files: false
+Serve Brotli Files: false
+Default File Extension: none
+
+Available on:
+  http://127.0.0.1:4200
+  http://10.26.174.202:4200
+Hit CTRL-C to stop the server
+
+[Thu Jan 16 2025 02:16:21 GMT+0530 (India Standard Time)]  "GET /" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+(node:69521) [DEP0066] DeprecationWarning: OutgoingMessage.prototype._headers is deprecated
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[Thu Jan 16 2025 02:16:27 GMT+0530 (India Standard Time)]  "GET /" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
