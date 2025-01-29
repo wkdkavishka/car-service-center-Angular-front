@@ -17,3 +17,7 @@ To run this application, follow these steps:
 3. Run `npm install` to install the required dependencies.
 4. Run `ng serve` to start the development server.
 5. Open your browser and navigate to `http://localhost:4200/` to view the application.
+
+## check out the back-end
+
+1. Check out the repository: `https://github.com/wkdkavishka/car-service-center-Express-back.git`
